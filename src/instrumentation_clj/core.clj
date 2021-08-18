@@ -12,3 +12,8 @@
 
 (defn current-ns-vars []
   (ns-vars [*ns*]))
+
+;; FIXME: Write fn to wrap around other fn and set var
+(defn var-append
+  [{:keys [var val]}]
+  )
