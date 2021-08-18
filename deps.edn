@@ -2,7 +2,13 @@
 
  :deps {org.clojure/clojure {:mvn/version "1.10.3"}}
  :aliases
- {:test
+ {:dev
+  {:extra-deps {com.bhauman/rebel-readline {:mvn/version "RELEASE"}}
+   :extra-paths ["dev"]
+   :main-opts ["-i" "dev/instrumentation_clj/dev.clj"
+               "-e" "(in-ns,'instrumentation-clj.dev)"
+               "--main" "rebel-readline.main"]}
+  :test
   {:extra-paths ["test"]
    :extra-deps {org.clojure/test.check {:mvn/version "1.1.0"}
                 io.github.cognitect-labs/test-runner
